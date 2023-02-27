@@ -1,3 +1,5 @@
+import { useState } from "react";
+import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
@@ -17,10 +19,8 @@ import { IconLockOpen } from "@tabler/icons";
 import { catchError } from "@utils/catchError";
 import useAuth from "hooks/useAuth";
 import usePageTitle from "hooks/usePageTitle";
-import { useState } from "react";
 import { Controller, useForm } from "react-hook-form";
-import { Link as RouteLink, useLocation, useNavigate } from "react-router-dom";
-import * as z from "zod";
+import { Link as RouteLink } from "react-router-dom";
 
 const schema = z.object({
   userName: z
@@ -45,8 +45,6 @@ export default function SignIn() {
   const [toggleShowPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
-  const location = useLocation();
-  const navigate = useNavigate();
   const { login } = useAuth();
 
   const {

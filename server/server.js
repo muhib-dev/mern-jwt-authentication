@@ -10,7 +10,6 @@ const server = http.createServer(app);
 
 // db connect
 mongoose
-  .set("strictQuery", false)
   .connect(config.mongooseUrl)
   .then(() => {
     console.log("mongodb connected");

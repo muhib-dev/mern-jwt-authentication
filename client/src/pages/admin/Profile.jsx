@@ -1,6 +1,6 @@
-import { Typography } from "@mui/material";
-import { Container } from "@mui/system";
 import { useEffect, useState } from "react";
+import Typography from "@mui/material/Typography";
+import Container from "@mui/system/Container";
 import useAxiosPrivate from "@hooks/useAxiosPrivate";
 
 const Profile = () => {

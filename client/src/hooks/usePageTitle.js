@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
+import { BRAND_NAME } from "@components/data/constrain";
 
 const usePageTitle = (title) => {
   const [pageTitle, setPageTitle] = useState(title);
 
   useEffect(() => {
-    document.title = `${pageTitle} - mern authentication`;
+    document.title = `${pageTitle} - ${BRAND_NAME}`;
   }, [pageTitle]);
 
   const changeTitle = (title) => {

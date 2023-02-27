@@ -4,7 +4,6 @@ const helmet = require("helmet");
 const cookieParser = require("cookie-parser");
 const rateLimit = require("express-rate-limit");
 const mongoSanitize = require("express-mongo-sanitize");
-const fileUpload = require("express-fileupload");
 const { requestLogger } = require("../middleware/logEvents");
 
 const limiterOptions = {
@@ -28,11 +27,6 @@ const middleware = [
   cookieParser(),
   express.urlencoded({ extended: true }),
   mongoSanitize(), // sanitize request data
-  fileUpload({
-    limits: { fileSize: 5 * 1024 * 1024 },
-    useTempFiles: true,
-    tempFileDir: "/tmp/",
-  }),
 ];
 
 module.exports = middleware;
