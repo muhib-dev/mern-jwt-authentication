@@ -13,6 +13,7 @@
 - MUI styles
 - Zod schema validation
 - JSON Web Tokens (JWT)
+- Axios Interceptor
 
 ### Back-End
 - Express
